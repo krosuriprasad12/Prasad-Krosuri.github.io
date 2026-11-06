@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prasad Krosuri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- =====================================================
+     STEP 1: EDIT YOUR DETAILS HERE (everything in one place)
+     ===================================================== -->
+<script>
+const CONFIG = {
+  name: "Prasad Krosuri",
+  tagline: "Investor. Learning manual testing.",
+  bio: "I am an investor, and I am taking training classes on manual testing to build a second career in software quality.",
+  photo: "photo.jpg",                       // your picture file (keep it next to index.html)
+  phone: "+91 9441008043",
+  email: "krosuriprasad12@gmail.com",
+  links: [
+    { label: "LinkedIn",  note: "Professional profile", url: "https://www.linkedin.com/in/prasad-krosuri-0445631b6/" },
+    { label: "YouTube",   note: "@Riddle_Buzz0",        url: "https://www.youtube.com/@Riddle_Buzz0" }
+  ],
+  about: [
+    { title: "Investing",       text: "I track and manage my own portfolio on INDmoney." },
+    { title: "Manual testing",  text: "Currently in training: test cases, bug reports and test planning." }
+  ]
+};
+</script>
+
+<!-- =====================================================
+     STEP 2 (optional): CHANGE COLORS HERE
+     ===================================================== -->
+<style>
+:root{
+  --bg:#eef1f5; --card:#ffffff; --ink:#142033; --muted:#58657a;
+  --accent:#0f6b5c;      /* main button color */
+  --accent-ink:#ffffff;
+  --highlight:#f0b429;   /* small accents */
+  --line:#d5dbe4;
+  --err:#b3261e; --ok:#0f6b5c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--highlight);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem;text-decoration:none}
+.auth{display:flex;gap:10px}
+.btn{font:inherit;font-weight:700;border-radius:8px;padding:10px 20px;cursor:pointer;border:2px solid var(--accent);transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.solid{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--accent)}
+
+.hero{display:grid;grid-template-columns:minmax(240px,380px) 1fr;gap:48px;align-items:center;padding:36px 0 56px}
+.photo{position:relative}
+.photo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;display:block;box-shadow:12px 12px 0 var(--highlight)}
+h1{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1;margin:0 0 14px;font-weight:800;letter-spacing:-.02em}
+.tagline{font-size:1.3rem;font-weight:500;margin:0 0 12px}
+.bio{color:var(--muted);max-width:52ch;margin:0 0 24px}
+.contact{display:flex;flex-wrap:wrap;gap:12px}
+.contact a{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 16px;text-decoration:none;font-weight:500}
+.contact a:hover{border-color:var(--accent)}
+
+section{padding:20px 0 44px}
+h2{font-family:"Bricolage Grotesque",sans-serif;font-size:1.7rem;margin:0 0 18px}
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.about div{background:var(--card);border-left:5px solid var(--highlight);padding:18px 20px;border-radius:4px 10px 10px 4px}
+.about h3{margin:0 0 4px;font-size:1.1rem}
+.about p{margin:0;color:var(--muted)}
+
+.links{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 4px;border-bottom:1px solid var(--line);text-decoration:none}
+.links a:hover{background:var(--card);padding-left:14px;padding-right:14px}
+.links a{transition:padding .15s,background .15s}
+.links strong{font-family:"Bricolage Grotesque",sans-serif;font-size:1.3rem}
+.links span{color:var(--muted);font-size:.95rem}
+
+footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+/* Login / Signup popup */
+dialog{border:0;border-radius:14px;padding:0;width:min(420px,92vw);box-shadow:0 20px 60px rgba(20,32,51,.35)}
+dialog::backdrop{background:rgba(20,32,51,.55)}
+.panel{padding:28px}
+.panel h2{margin-bottom:6px}
+.panel .sub{margin:0 0 18px;color:var(--muted);font-size:.95rem}
+form{display:flex;flex-direction:column;gap:14px}
+label{display:flex;flex-direction:column;gap:5px;font-weight:500;font-size:.95rem}
+input{font:inherit;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+input:focus{outline:3px solid var(--highlight);border-color:var(--accent)}
+.msg{min-height:1.3em;margin:0;font-size:.92rem;font-weight:500}
+.msg.err{color:var(--err)} .msg.ok{color:var(--ok)}
+.switch{margin:14px 0 0;font-size:.92rem;color:var(--muted)}
+.switch button{background:none;border:0;color:var(--accent);font:inherit;font-weight:700;cursor:pointer;padding:0;text-decoration:underline}
+.close{position:absolute;top:10px;right:14px;background:none;border:0;font-size:1.8rem;line-height:1;cursor:pointer;color:var(--muted)}
+.hidden{display:none}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:32px}
+  .photo{max-width:320px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="#top" id="brand"></a>
+    <div class="auth">
+      <button class="btn ghost" id="openLogin">Log in</button>
+      <button class="btn solid" id="openSignup">Sign up</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="photo"><img id="photo" alt="Portrait of Prasad Krosuri"></div>
+      <div>
+        <h1 id="name"></h1>
+        <p class="tagline" id="tagline"></p>
+        <p class="bio" id="bio"></p>
+        <div class="contact" id="contact"></div>
+      </div>
+    </div>
+
+    <section>
+      <h2>About me</h2>
+      <div class="about" id="about"></div>
+    </section>
+
+    <section>
+      <h2>Find me online</h2>
+      <ul class="links" id="links"></ul>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
+</div>
+
+<!-- Login / Signup popup -->
+<dialog id="authDialog" aria-label="Account">
+  <button class="close" id="closeDlg" aria-label="Close">&times;</button>
+
+  <!-- LOGIN: email, password, then Log in button -->
+  <div class="panel" id="loginPanel">
+    <h2>Log in</h2>
+    <p class="sub">Use the email and password you signed up with.</p>
+    <form id="loginForm" novalidate>
+      <label>User mail id
+        <input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="email" required>
+      </label>
+      <label>Enter password
+        <input type="password" id="loginPass" autocomplete="current-password" required>
+      </label>
+      <p class="msg" id="loginMsg" role="alert"></p>
+      <button class="btn solid" type="submit">Log in</button>
+    </form>
+    <p class="switch">New here? <button type="button" id="toSignup">Create an account</button></p>
+  </div>
+
+  <!-- SIGNUP: email, password, re-enter password, then Sign up button -->
+  <div class="panel hidden" id="signupPanel">
+    <h2>Sign up</h2>
+    <p class="sub">Create an account with your email.</p>
+    <form id="signupForm" novalidate>
+      <label>Enter mail id
+        <input type="email" id="suEmail" placeholder="you@example.com" autocomplete="email" required>
+      </label>
+      <label>Enter password
+        <input type="password" id="suPass" autocomplete="new-password" minlength="6" required>
+      </label>
+      <label>Re-enter password
+        <input type="password" id="suPass2" autocomplete="new-password" required>
+      </label>
+      <p class="msg" id="signupMsg" role="alert"></p>
+      <button class="btn solid" type="submit">Sign up</button>
+    </form>
+    <p class="switch">Already registered? <button type="button" id="toLogin">Log in</button></p>
+  </div>
+</dialog>
+
+<script>
+/* ---------- Fill the page from CONFIG ---------- */
+const $ = id => document.getElementById(id);
+document.title = CONFIG.name;
+$("brand").textContent = CONFIG.name;
+$("name").textContent = CONFIG.name;
+$("tagline").textContent = CONFIG.tagline;
+$("bio").textContent = CONFIG.bio;
+$("photo").src = CONFIG.photo;
+$("footer").textContent = "© " + new Date().getFullYear() + " " + CONFIG.name;
+
+$("contact").innerHTML =
+  `<a href="tel:${CONFIG.phone.replace(/\s/g,"")}">Call ${CONFIG.phone}</a>` +
+  `<a href="mailto:${CONFIG.email}">${CONFIG.email}</a>`;
+
+$("about").innerHTML = CONFIG.about.map(a =>
+  `<div><h3>${a.title}</h3><p>${a.text}</p></div>`).join("");
+
+// Social links open the official sites in a new tab
+$("links").innerHTML = CONFIG.links.map(l =>
+  `<li><a href="${l.url}" target="_blank" rel="noopener noreferrer">
+     <strong>${l.label}</strong><span>${l.note}</span></a></li>`).join("");
+
+/* ---------- Login / Signup popup ---------- */
+const dlg = $("authDialog");
+function show(which){
+  $("loginPanel").classList.toggle("hidden", which !== "login");
+  $("signupPanel").classList.toggle("hidden", which !== "signup");
+  ["loginMsg","signupMsg"].forEach(i => { $(i).textContent = ""; $(i).className = "msg"; });
+  if (!dlg.open) dlg.showModal();
+  (which === "login" ? $("loginEmail") : $("suEmail")).focus();
+}
+$("openLogin").onclick  = () => show("login");
+$("openSignup").onclick = () => show("signup");
+$("toSignup").onclick   = () => show("signup");
+$("toLogin").onclick    = () => show("login");
+$("closeDlg").onclick   = () => dlg.close();
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+
+function say(id, text, ok){ const m = $(id); m.textContent = text; m.className = "msg " + (ok ? "ok" : "err"); }
+
+/* NOTE: This is a front-end demo. Accounts are saved in this browser only
+   (localStorage), so it is NOT secure. For a real site, send these values
+   to a server/backend and never store plain passwords. */
+function getUsers(){ try { return JSON.parse(localStorage.getItem("users") || "{}"); } catch(e){ return {}; } }
+function saveUsers(u){ try { localStorage.setItem("users", JSON.stringify(u)); return true; } catch(e){ return false; } }
+
+$("signupForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const email = $("suEmail").value.trim().toLowerCase(), p1 = $("suPass").value, p2 = $("suPass2").value;
+  if (!/^\S+@\S+\.\S+$/.test(email)) return say("signupMsg", "Enter a valid mail id.");
+  if (p1.length < 6)                 return say("signupMsg", "Password must be at least 6 characters.");
+  if (p1 !== p2)                     return say("signupMsg", "Passwords do not match. Re-enter the same password.");
+  const users = getUsers();
+  if (users[email])                  return say("signupMsg", "This mail id is already registered. Log in instead.");
+  users[email] = p1;
+  if (!saveUsers(users))             return say("signupMsg", "Could not save the account in this browser.");
+  say("signupMsg", "Sign up complete. You can log in now.", true);
+  $("signupForm").reset();
+  setTimeout(() => show("login"), 1200);
+});
+
+$("loginForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const email = $("loginEmail").value.trim().toLowerCase(), pass = $("loginPass").value;
+  if (!email || !pass) return say("loginMsg", "Enter your mail id and password.");
+  const users = getUsers();
+  if (users[email] === undefined) return say("loginMsg", "No account found for this mail id. Sign up first.");
+  if (users[email] !== pass)      return say("loginMsg", "Wrong password. Try again.");
+  say("loginMsg", "Logged in. Welcome, " + email + ".", true);
+});
+</script>
+</body>
+</html>
